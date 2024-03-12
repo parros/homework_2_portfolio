@@ -3,14 +3,15 @@
 }
 
 :root {
-    --primary_color: rgb(55, 148, 235);
+    --primary_color: rgb(0, 162, 255);
     --secondary_color: rgb(0, 255, 149);
     --tertiary_color: rgb(243, 146, 36);
+    --borders: rgb(5, 18, 92);
 }
 
 header {
-    padding: 50px 0;
-    background-color: var(--primary_color);
+    padding: 50px 0 65px 0;
+    background: linear-gradient(90deg, var(--borders) 0%, rgb(9, 34, 179) 49%, var(--primary_color) 100%);
 }
 
 h1 {
@@ -24,7 +25,7 @@ h1 {
     border-radius: 50px;
     margin-top: -30px;
     margin-left: 10px;
-    border: 2px solid black;
+    border: 2px solid var(--borders);
     filter: brightness(90%);
 }
 
@@ -38,11 +39,14 @@ nav {
 nav a {
     color: black;
     text-decoration: none;
-    border: 5px solid black;
+    border: 5px solid var(--borders);
     padding: 10px;
     border-radius: 50%;
+    background-color: var(--secondary_color);
+}
+
+nav a:hover {
     background-color: var(--tertiary_color);
-    
 }
 
 h2 {
@@ -52,7 +56,7 @@ h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 section {
-    border-top: 2px solid black;
+    border-top: 2px solid var(--borders);
 background-color: var(--primary_color);
 }
 article {
@@ -61,23 +65,53 @@ article {
     width: 30%;
     height: 300px;
     display: inline-block;
+    position: relative;
 }
 
 article img {
-    border: 3px dashed black;
+    border: 3px dashed var(--borders);
     width: 100%;
     height: 100%;
 }
 
+article img:hover {
+    border: 3px dashed var(--tertiary_color);
+}
+
 article p {
-    border: 3px dashed black;
+    border: 3px dashed var(--borders);
     text-align: center;
-    position: relative;
-    bottom: 150px;
+    bottom: 140px;
+    position: absolute;
+    width: 100%;
+}
+
+.img_titles {
+    border: 3px solid var(--borders);
+    width: 33%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--tertiary_color);
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+article:hover .img_titles {
+    background-color: var(--secondary_color);
 }
 
 footer {
     text-align: center;
     background-color: var(--secondary_color);
     font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    article {width: 45%;
+    }
+}
+ 
+@media (max-width: 500px) {
+    article {width: 80%;
+    }
 }
