@@ -25,7 +25,7 @@ h1 {
     border-radius: 50px;
     margin-top: -30px;
     margin-left: 10px;
-    border: 2px solid var(--borders);
+    border: 2px solid black;
     filter: brightness(90%);
 }
 
@@ -33,13 +33,13 @@ nav {
     font-family: fantasy;
     float: right;
     margin-right: 10px;
-    margin-bottom: -20px;
+    margin-top: 15px;
 }
 
 nav a {
     color: black;
     text-decoration: none;
-    border: 5px solid var(--borders);
+    border: 5px solid black;
     padding: 10px;
     border-radius: 50%;
     background-color: var(--secondary_color);
@@ -55,10 +55,13 @@ h2 {
     border-top: 2px solid black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 section {
     border-top: 2px solid var(--borders);
-background-color: var(--primary_color);
+    background-color: var(--primary_color);
+    padding-left: 1.5%;
 }
+
 article {
     margin: .75%;
     margin-left: 1.75%;
@@ -103,15 +106,43 @@ article:hover .img_titles {
 footer {
     text-align: center;
     background-color: var(--secondary_color);
-    font-size: 14px;
+    font-size: 18px;
+    padding-bottom: 25px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1150px) {
     article {width: 45%;
+    }
+    header {
+        padding: 50px 0 115px 0;
+    }
+    h1{
+        text-align: center;
+    }
+    nav {
+        margin-top: 65px;
     }
 }
  
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     article {width: 80%;
+    }
+    header {
+        padding: 50px 0 130px 0;
+    }
+    nav {
+        margin-top: 80px;
+    }
+    h1{
+        margin-left: 7%;
+        text-align: left;
+        padding-right: 150px;
+    }
+    #avatar_image {
+        position: relative;
+        margin: 10px 200px 0 0;
+    } 
+    section {
+        padding-left: 12%;
     }
 }
