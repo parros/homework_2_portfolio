@@ -6,18 +6,19 @@
     --primary_color: rgb(0, 162, 255);
     --secondary_color: rgb(0, 255, 149);
     --tertiary_color: rgb(243, 146, 36);
-    --borders: rgb(5, 18, 92);
+    --link_borders: rgb(14, 11, 165);
+    --font_fam: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 header {
     padding: 50px 0 65px 0;
-    background: linear-gradient(90deg, var(--borders) 0%, rgb(9, 34, 179) 49%, var(--primary_color) 100%);
+    background: linear-gradient(90deg, var(--link_borders) 0%, rgb(6, 49, 243) 49%, var(--primary_color) 100%);
 }
 
 h1 {
     position: relative;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font_fam);
 }
 
 #avatar_image {
@@ -34,6 +35,7 @@ nav {
     float: right;
     margin-right: 10px;
     margin-top: 15px;
+    font-size: 14PX;
 }
 
 nav a {
@@ -49,57 +51,70 @@ nav a:hover {
     background-color: var(--tertiary_color);
 }
 
+section {
+    border-top: 2px solid var(--link_borders);
+    background-image: linear-gradient(rgba(0, 162, 255, 0.5), rgba(0, 255, 149, 0.5)), url(avatar_image.jpg);
+    background-color: var(--primary_color);
+    background-size: 100%;
+    background-position: center;
+    padding-bottom: 5%;
+}
+
 h2 {
     text-align: center;
     background-color: var(--secondary_color);
     border-top: 2px solid black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 2px solid black;
+    font-family: var(--font_fam);
 }
 
-section {
-    border-top: 2px solid var(--borders);
-    background-color: var(--primary_color);
-    padding-left: 1.5%;
+p {
+    font-family: var(--font_fam);
 }
 
-article {
-    margin: .75%;
-    margin-left: 1.75%;
+#about_me_text {
+    padding: 0 5%;
+    font-size: 24px;
+}
+
+.works {
+    margin: .75 15%;
+    margin-left: 2%;
     width: 30%;
     height: 300px;
     display: inline-block;
     position: relative;
+    padding-bottom: 2%;
 }
 
-article img {
-    border: 3px dashed var(--borders);
+#first_work {
+    width: 50%;
+    height: 500px;
+    margin: .75% 25%;
+}
+
+.works img {
+    border: 3px dashed var(--link_borders);
     width: 100%;
     height: 100%;
 }
 
-article img:hover {
+.works img:hover {
     border: 3px dashed var(--tertiary_color);
 }
 
-article p {
-    border: 3px dashed var(--borders);
-    text-align: center;
-    bottom: 140px;
-    position: absolute;
-    width: 100%;
-}
-
 .img_titles {
-    border: 3px solid var(--borders);
-    width: 33%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: 3px solid var(--link_borders);
     background-color: var(--tertiary_color);
     position: absolute;
     bottom: 15px;
     left: 15px;
+    bottom: 50px;
+    width: 50%;
 }
 
-article:hover .img_titles {
+.works:hover .img_titles {
     background-color: var(--secondary_color);
 }
 
@@ -107,42 +122,49 @@ footer {
     text-align: center;
     background-color: var(--secondary_color);
     font-size: 18px;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
 }
 
-@media (max-width: 1150px) {
-    article {width: 45%;
-    }
+@media (max-width: 1275px) {
     header {
-        padding: 50px 0 115px 0;
-    }
-    h1{
-        text-align: center;
+        padding-bottom: 100px;
     }
     nav {
         margin-top: 65px;
     }
+    .works {
+        height: 250px;
+        width: 45%
+    }
+    #first_work {
+        height: 400px;
+        width: 55%;
+    }
 }
  
 @media (max-width: 700px) {
-    article {width: 80%;
-    }
     header {
-        padding: 50px 0 130px 0;
+        padding-bottom: 115px;
+    }
+    h1{
+        text-align: left;
+        padding-right: 150px;
     }
     nav {
         margin-top: 80px;
-    }
-    h1{
-        margin-left: 7%;
-        text-align: left;
-        padding-right: 150px;
     }
     #avatar_image {
         position: relative;
         margin: 10px 200px 0 0;
     } 
-    section {
-        padding-left: 12%;
+    .works {
+        height: 200px;
+        width: 60%;
+        margin: .75% 20%;
+        }
+    #first_work {
+        height: 300px;
+        width: 60%;
+        margin: .75% 20%;
     }
 }
